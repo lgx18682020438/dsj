@@ -1,10 +1,13 @@
-/* 常量区 */
-const URLTITLE = 'http://ajax.frontend.itheima.net';
+/* --------------------常量区--------------------------- */
+const URLTITLE = 'http://ajax.frontend.itheima.net',
 /* 保存到 localStorage */
-var setLocal = (k,v) => localStorage.setItem(k,JSON.stringify(v));
+setLocal = (k,v) => localStorage.setItem(k,JSON.stringify(v)),
 /* 获取 localStorage */
-var getLocal = k => JSON.parse(localStorage.getItem(k));
+getLocal = k => JSON.parse(localStorage.getItem(k)),
+/* 删除 localStorage */
+removeLocal = k => localStorage.removeItem(k);
 /* ajax 请求时拼接头部 */
-$.ajaxPrefilter(function(option){
+$.ajaxPrefilter(option => {
+    if(option.url.indexOf('/my') != -1 ) option.headers = {Authorization : getLocal('token')}
     option.url = URLTITLE + option.url;
 });

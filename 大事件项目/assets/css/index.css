@@ -1,0 +1,48 @@
+/* 公共区域 */
+.iconfont{
+    margin-right: 8px;
+    font-size: 18px;
+}
+.layui-icon {
+    margin-right: 8px;
+    margin-left: 20px;
+    font-size: 18px;
+}
+
+/* 头部区域制作 */
+.myFirst {
+    padding-left: 30px;
+    font-size: 13px;
+    line-height: 60px;
+    height: 60px;
+    box-sizing: border-box;
+    user-select: none;
+    border-bottom: 1px solid black;
+}
+
+.default-img {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    background-color: #01AAED;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 内容区域制作 */
+iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.layui-body {
+    overflow: hidden;
+}
+
+/* 底部区域制作 */
+.layui-footer {
+    text-align: center;
+    font-size: 12px;
+}

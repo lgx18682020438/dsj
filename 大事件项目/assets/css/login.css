@@ -4,7 +4,6 @@ body {
     background: url("../images/login_bg.jpg") no-repeat;
     background-size: cover;
 }
-
 /* -------------------------登录窗口--------------------------- */
 .login-box {
     width: 400px;

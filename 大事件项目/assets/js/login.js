@@ -19,7 +19,7 @@ $(function () {
         }
     });
 
-    // 去注册/去登录
+    // 去注册/去登录 链接单击事件
     $('.toggle').click(toggleClick);
 
     function toggleClick() {
