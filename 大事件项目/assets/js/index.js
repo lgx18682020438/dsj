@@ -2,19 +2,18 @@ $(function(){
     // 获取 token
     let token = getLocal('token');
     // 判断是否登录
-    if(!token)
-        return location.href = 'login.html';
-
-    // 获取用户头像
+    if(!token) return location.href = 'login.html';
+    // 获取用户信息
     function getUserInfo (){
         $.ajax({
             type: 'GET', 
             url: '/my/userinfo',
             success: function (res) {
                 if(res.status != '0') return layer.msg(res.message);
-                let username =  res.data.username || res.data.nickname;
-                if(res.data.user_pic){
-                    $('.myFirst').html(`<img src="${res.data.user_pic}" class="layui-nav-img">${username}`);
+                users = res.data;
+                let username =  users.nickname || users.username;
+                if(users.user_pic){
+                    $('.myFirst').html(`<img src="${users.user_pic}" class="layui-nav-img">${username}`);
                 }else{
                     let interceptName = username.substring(0,1).toUpperCase(); 
                     $('.myFirst').html(`<span class="layui-nav-img default-img">${interceptName}</span>欢迎 ${username}`);
@@ -24,6 +23,7 @@ $(function(){
             complete : function(res){}
         });
     }
+    
     getUserInfo();
 
     // 绑定退出事件

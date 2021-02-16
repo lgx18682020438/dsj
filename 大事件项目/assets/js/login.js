@@ -1,24 +1,5 @@
 $(function () {
 
-    var form = layui.form;
-    // layui 密码校验
-    form.verify({
-        // 用户名格式校验
-        username: [
-            /^[\S]{3,12}$/, '用户必须3到12位，且不能出现空格'
-        ],
-        // 密码格式校验
-        pwd: [
-            /^[\S]{6,12}$/, '密码必须6到12位，且不能出现空格'
-        ],
-        // 确认密码格式校验
-        repwd: function (value) { //value：表单的值
-            if (value !== $('.re-pwd').val()) {
-                return '两次密码不一致';
-            }
-        }
-    });
-
     // 去注册/去登录 链接单击事件
     $('.toggle').click(toggleClick);
 
@@ -29,7 +10,7 @@ $(function () {
 
     // 登录事件监听
     $('#login-module').submit(function (e) {
-        e.preventDefault;
+        e.preventDefault();
         $.ajax({
             type: 'POST', //请求的方式 例如 GET 或 POST
             url: '/api/login',
@@ -46,7 +27,7 @@ $(function () {
 
     // 注册事件监听
     $('#reg-module').submit(function (e) {
-        e.preventDefault;
+        e.preventDefault();
         $.ajax({
             type: 'POST', //请求的方式 例如 GET 或 POST
             url: '/api/reguser',
