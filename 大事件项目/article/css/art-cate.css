@@ -1,0 +1,18 @@
+body {
+    background-color: #f2f3f5;
+    margin: 15px;
+}
+
+.layui-card-header {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.layui-form {
+    padding-right: 30px;
+    padding-top: 20px;
+}
+.trId {
+    display: none;
+}
