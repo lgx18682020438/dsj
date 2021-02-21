@@ -9,7 +9,8 @@ const URLTITLE = 'http://ajax.frontend.itheima.net',
     // 获取 localStorage 
     getLocal = k => JSON.parse(localStorage.getItem(k)),
     // 删除 localStorage
-    removeLocal = k => localStorage.removeItem(k);
+    removeLocal = k => localStorage.removeItem(k),
+    laypage = layui.laypage;
 /* --------------------成员变量区--------------------------- */
 // 用户对象
 var users = null;
