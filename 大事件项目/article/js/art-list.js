@@ -3,7 +3,7 @@ $(function () {
     /* 定义查询对象 */
     let pram = {
         pagenum: 1, //页码值
-        pagesize: 2, //每页显示多少条数据
+        pagesize: 50, //每页显示多少条数据
         cate_id: '', //文章分类的 Id
         state: '' //文章的状态，可选值有：已发布、草稿
     };
@@ -32,7 +32,7 @@ $(function () {
                     
                     `)
                 );
-                $('#tbody').html(itemArr.join(''));
+                $('tbody').html(itemArr.join(''));
             }
         });
     }

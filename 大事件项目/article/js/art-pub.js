@@ -58,7 +58,7 @@ $(function () {
     $('#wzxg').submit(function (e) {
         e.preventDefault();
         let fd = new FormData($(this)[0]);
-        fd.append('state', '');
+        fd.append('state', '已发布');
         $image.cropper('getCroppedCanvas', {
             // 创建一个 Canvas 画布    
             width: 400,
@@ -67,7 +67,6 @@ $(function () {
             // 将 Canvas 画布上的内容，转化为文件对象    
             // 得到文件对象后，进行后续的操作  
             fd.append("cover_img", blob);
-
             $.ajax({
                 type: 'POST',
                 url: '/my/article/add',
@@ -75,8 +74,9 @@ $(function () {
                 processData : false,
                 data: fd,
                 success: function (res) {
-                    debugger;
-                    console.log(res);
+                    if (res.status != '0') return layer.msg(res.message);
+                    layer.msg(res.message);
+                    location.href = './art-list.html';
                 }
             });
 
