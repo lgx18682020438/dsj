@@ -1,5 +1,6 @@
 /* --------------------常量区--------------------------- */
 const URLTITLE = 'http://ajax.frontend.itheima.net',
+      URLTITLETEST = 'http://www.liulongbin.top:3007',
     //获取form模块
     form = layui.form,
     //获取upload模块
